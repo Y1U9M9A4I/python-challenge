@@ -44,3 +44,14 @@ for i in range(len(cunique)):
 print("-------------------------")
 print("The winner is..." + winner + "!")
 
+export_path = "PyBank/Analysis/election_results.txt"
+
+with open(export_path, "w") as file: 
+    file.write("Election Results\n")
+    file.write("-------------------------\n")
+    file.write("Total Votes:" + str(count) + "\n")
+    file.write("-------------------------\n")
+    for i in range(len(cunique)):
+        file.write(cunique[i] + ":" + str(round(vperc[i],3)) + "% (" + str(round(vcount[i],3)) + ")\n")
+    file.write("-------------------------\n")
+    file.write("The winner is..." + winner + "!\n")
