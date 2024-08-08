@@ -37,6 +37,6 @@ print("--------------------")
 print("Total Number of Votes:" + str(count))
 
 for i in range(len(cunique)):
-    print(cunique[i]) + ":" + str(vperc[i]) + "% (" + str(count[i]) + ")"
+    print(cunique[i] + ":" + str(vperc[i]) + "% (" + str(vcount[i]) + ")")
 print("The winner is..." + winner)
 
