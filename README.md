@@ -27,6 +27,7 @@ Our final Python script analyzes the records in order to calculate the following
 
 # In Summary #
 Summaries of the analyzed data, in txt format, are included in the corresponding PyBank or PyPoll 
+
 *Used languages and packages include:* 
 
 
