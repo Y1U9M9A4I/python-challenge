@@ -48,18 +48,26 @@ with open(budget_csv, newline="") as csvfile:
     inc_date = dates[monthly_change.index(max_in)]
     dec_date = dates[monthly_change.index(max_dec)]
 
-print("--------------------")
-print("Data Report")
-print("--------------------")
+print("Financial Analysis")
+print("----------------------------")
 print("Total Months:" + str(count))
 print("Total Profits:" "$" + str(prof_total))
 print("Average Change:" "$" + str(int(prof_avg_change)))
-
 print("Greatest Increase in Profits:" + str(inc_date) + "($" + str(max_in)+")")
-print("Greatest Decrease in Profits:" + str(inc_date) + "($" + str(max_dec)+")")
-print("--------------------")
-    
-    
+print("Greatest Decrease in Profits:" + str(dec_date) + "($" + str(max_dec)+")")
+
+export_path = "PyBank/Analysis/budget.txt"
+
+with open(export_path, "w") as file: 
+    file.write("Financial Analysis\n")
+    file.write("----------------------------\n")
+    file.write("Total Months:" + str(count) + "\n")
+    file.write("Total Profits:" "$" + str(prof_total) + "\n")
+    file.write("Average Change:" "$" + str(int(prof_avg_change)) + "\n")
+    file.write("Greatest Increase in Profits:" + str(inc_date) + "($" + str(max_in)+")\n")
+    file.write("Greatest Decrease in Profits:" + str(dec_date) + "($" + str(max_dec)+")\n")
+
+    print("Bank Budget results have been saved to: " + "PyBank/Analysis")    
 
 
 
