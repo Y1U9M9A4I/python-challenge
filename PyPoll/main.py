@@ -33,7 +33,7 @@ with open(election_csv, newline="") as csvfile:
     winner_count = max(vcount)
     winner = cunique[vcount.index(winner_count)]
 
-# print summary of the analyses 
+# print summary of the analyses (+ iterate through candidates to show their indiv data)
 
 print("Election Results")
 print("-------------------------")
@@ -43,6 +43,8 @@ for i in range(len(cunique)):
     print(cunique[i] + ":" + str(round(vperc[i],3)) + "% (" + str(round(vcount[i],3)) + ")")
 print("-------------------------")
 print("The winner is..." + winner + "!")
+
+# export results to csv 
 
 export_path = "PyPoll/Analysis/election_results.txt"
 

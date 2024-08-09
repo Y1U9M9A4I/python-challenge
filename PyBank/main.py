@@ -45,8 +45,14 @@ with open(budget_csv, newline="") as csvfile:
     max_in = max(monthly_change)
     max_dec = min(monthly_change)
 
-    inc_date = dates[monthly_change.index(max_in)]
-    dec_date = dates[monthly_change.index(max_dec)]
+    # index of greatest increase and decrease in profit
+
+    max_in_index = monthly_change.index(max_in)
+    max_dec_index = monthly_change.index(max_dec)
+
+# Get the corresponding dates for the greatest increase and decrease in profits (change starts AFTER seond month involved = +1)
+inc_date = dates[max_in_index + 1] 
+dec_date = dates[max_dec_index + 1]  
 
 print("Financial Analysis")
 print("----------------------------")
